@@ -6,38 +6,54 @@
 body{
     background-color:black
 }
-.header{
-    display: block;
-    position: fixed;
+
+.logo img{
+    width:100px;
+}
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    padding:  40px 100px;
     z-index: 10000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     transition:0.5s
 }
-.header.sticky{
+header.sticky{
     background-color: black;
+    padding:10px 100px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-   
 }
-.header-logo img{
-    width:100px;
-    cursor: pointer;
+
+
+
+header .navigation{
+    position:relative;
+    display: flex;
 }
-.header-logo img{
-    float: left;
-    padding-top: 10px;
-    padding-left: 25px;
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+
 }
-.header-user-login img{
-    float: right;
-    width: 60px;
-    padding: 10px;
-    cursor: pointer;
+header .navigation li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
 }
-.header-user-login{
-    padding-right: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+header.sticky .navigation li a{
+    color: white;
+
 }
+header .navigation li a:hover{
+    color: #ff0157;
+
+}
+
+
 .content{
     padding-top:10px;
     padding-left: 30px;
@@ -137,62 +153,59 @@ body{
     padding-top: 50px;
     font-size:20px
 }
+.test li{
+    color: white;
+}
+
+
+
 @media (max-width: 991px){
-    body{
+    /* body{
         background-image: url("../img/background.jpg");
+    } */
+    header,
+    header.sticky{
+        padding: 10px 20px;
+    }
+    header .navigation{
+        display:none;
+    }
+    header .navigation.active{
+        width: 100%;
+        height: calc(100% - 68px);
+        position: fixed;
+        top: 68px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color:black;
+    }
+    header .navigation li{
+        margin-left: 0;
+    }
+    header .navigation li a{
+ 
+        color: white;
+        font-size:1.6em;
+    
     }
     .menuToggle{
         position: relative;
         width: 40px;
         height: 40px;
-        padding-top:50px;
         background: url("../img/menu.png");
         background-size: 30px;
         background-repeat: no-repeat;
         background-position:center;
         cursor: pointer;
-        float: right;
     }
     .menuToggle.active{
         background-image: url("../img/close.png");
         background-size: 25px;
         background-repeat: no-repeat;
         background-position:center;
-    }
-
-    header,
-    header.sticky{
-        position: fixed;
-        height: 60px;
-    }
-    header .header-user-login{
-        display:none;
-    }
-   .header-user-login.active{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 60px;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: #fff;
-    }
-    header .header-user-login{
-        margin-left: 0;
-    }
-    header .header-user-login{
-        color: #111;
-        font-size:1.6em;
-    }
-   
-    .feature-box img{
-        padding-left: 10px;
-        transition:0.5s;
-        width:100%;
-
     }
     .content{
         padding-top:5%;
@@ -208,5 +221,19 @@ body{
     .content-title h3{
         font-size:40px
     }
+    .featured--watchbutton,
+    .featured--mylistbutton {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-right: 10px;
+        opacity: 1;
+        transition: all ease 0.2s;
+        cursor: pointer;
+        
+}
 }
 

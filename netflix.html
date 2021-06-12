@@ -16,20 +16,24 @@
     <title>NetFlix</title>
 </head>
 <body>
-    <header class="header">
+
+    <header>
+        <a href="" class="logo">
+            <img src="img/logo.png">
+        </a>
         <div class="menuToggle" onclick="toggleMenu()"></div>
-        <div class="header-navigation">
-            <div class="header-logo">
-                <img src="img/logo.png">
-            </div>
-            <div class="header-user-login">
-                <img src="img/user.png">
-                <img src="img/user.png">
-                <img src="img/user.png">
-                <img src="img/user.png">
-            </div>
-        </div>
+        <ul class="navigation">
+            <li><a href="" onclick="toggleMenu()">Home</a></li>
+            <li><a href="" onclick="toggleMenu()">TV Show</a></li>
+            <li><a href="" onclick="toggleMenu()">Movies</a></li>
+            <li><a href="" onclick="toggleMenu()">Upcoming</a></li>
+            <li><a href="" onclick="toggleMenu()">Kids</a></li>
+            <li><a href="" onclick="toggleMenu()">Setting</a></li>
+            <li><a href=""><i class="fas fa-search"></i></a></li>
+        </ul>
     </header>
+
+
     <section class="content">
         <div class="content-name">
             <div class="content-title">
@@ -43,7 +47,7 @@
             </div>
         </div>
     </section>
-    <section class="content-list">
+    <section id="Movies" class="content-list">
         <div class="content-list-tilte">
             <h3>Recommend For You</h3>
         </div>
@@ -200,7 +204,7 @@
 
 
     <div class="feature-heading">
-        <h2>Featured Categories</h2>
+        <h2>TV Show</h2>
     </div>
     <ul id="responsive-4" class="cs-hidden">
 
@@ -792,7 +796,7 @@
         })
         function toggleMenu(){
             const menuToggle = document.querySelector('.menuToggle');
-            const navigation = document.querySelector('.header-user-login');
+            const navigation = document.querySelector('.navigation');
             navigation.classList.toggle('active');
             menuToggle.classList.toggle('active');
         }
